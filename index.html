@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="All-in-one online toolkit for PDF and image processing. Convert, compress, edit, and transform files with professional-grade tools.">
+    <title>ToolHub - Online PDF & Image Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1d4ed8;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--dark);
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-bar {
+            max-width: 600px;
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1rem;
+        }
+
+        .tool-categories {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            background: white;
+            padding: 4rem 1rem;
+        }
+
+        .feature-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+        }
+
+        .tool-highlight {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: var(--light);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">ToolHub</a>
+            <div class="nav-links">
+                <a href="#" class="btn">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Your All-in-One File Processing Toolkit</h1>
+        <p>Convert, compress, edit, and transform files with professional-grade tools</p>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search for tools...">
+        </div>
+    </section>
+
+    <section class="tool-categories">
+        <h2>Popular Tool Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <i class="fas fa-file-pdf card-icon"></i>
+                <h3>PDF Tools</h3>
+                <p>Merge, split, compress, and convert PDF documents</p>
+                <a href="#" class="btn mt-2">Explore</a>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-image card-icon"></i>
+                <h3>Image Tools</h3>
+                <p>Convert, resize, compress, and edit images</p>
+                <a href="/img-compression.html" class="btn mt-2">Explore</a>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-file-export card-icon"></i>
+                <h3>Converters</h3>
+                <p>Convert between various file formats</p>
+                <a href="#" class="btn mt-2">Explore</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="tool-highlight">
+        <h2>Featured Tools</h2>
+        <div class="tool-grid">
+            <div class="tool-card">
+                <i class="fas fa-compress"></i>
+                <h4>PDF Compressor</h4>
+                <p>Reduce PDF file size without quality loss</p>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-file-image"></i>
+                <h4>Image Converter</h4>
+                <p>Convert between JPG, PNG, WEBP, and more</p>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-merge"></i>
+                <h4>PDF Merger</h4>
+                <p>Combine multiple PDFs into one document</p>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-crop"></i>
+                <h4>Image Resizer</h4>
+                <p>Resize images to exact dimensions</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ToolHub</h3>
+                <p>Professional online tools for all your file processing needs</p>
+            </div>
+            <div class="footer-section">
+                <h3>Tools</h3>
+                <ul class="footer-links">
+                    <li><a href="#">PDF Tools</a></li>
+                    <li><a href="#">Image Tools</a></li>
+                    <li><a href="#">Converters</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
